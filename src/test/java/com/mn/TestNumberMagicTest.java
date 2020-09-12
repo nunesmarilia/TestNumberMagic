@@ -41,4 +41,31 @@ class TestNumberMagicTest {
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> TestNumberMagic.validNumberMagic(param));
     }
+
+    @Test
+    @DisplayName("Teste sucesso parêmetro inválido: Letras - Entrada [[B,A]]")
+    void testParamInvalidLetter() {
+        String[] param  = new String[1];
+        param[0]        = "[[B,A]]";
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TestNumberMagic.validNumberMagic(param));
+    }
+
+    @Test
+    @DisplayName("Teste sucesso parêmetro inválido: Espaços - Entrada [[ 30,27 ]]")
+    void testParamInvalidSpace() {
+        String[] param  = new String[1];
+        param[0]        = "[[ 30,27 ]]";
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TestNumberMagic.validNumberMagic(param));
+    }
+
+    @Test
+    @DisplayName("Teste sucesso parêmetro inválido: Vazio - Entrada {}")
+    void testParamInvalidEmpty() {
+        String[] param  = new String[1];
+        param[0]        = "";
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TestNumberMagic.validNumberMagic(param));
+    }
 }

@@ -29,6 +29,10 @@ public class TestNumberMagic {
          * - Número não inteiro
          */
         String parseParam       = param[0].toString();
+
+        if( parseParam.isEmpty() )
+            throw new IllegalArgumentException("Parêmetro de entrada inválido - Vazio");
+
         Pattern filerRegx       = Pattern.compile("^\\[[ ]*(\\[(([ ]*[0-9]+[ ]*,[ ]*[0-9]+)[ ]*\\][ ]*[,]?[ ]*)+|[ ]*[0-9]+[ ]*,[ ]*[0-9]+[ ]*)+[ ]*\\]$");
         Matcher regexMatcher    = filerRegx.matcher(parseParam);
 
