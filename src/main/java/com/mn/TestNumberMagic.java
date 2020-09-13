@@ -8,8 +8,6 @@ import java.util.stream.IntStream;
 
 public class TestNumberMagic {
 
-    static boolean testCousin   = true;
-    static int countCousin      = 0;
     static int countNumberMagic = 0;
 
     public static void main(String[] args){
@@ -69,7 +67,7 @@ public class TestNumberMagic {
                 // Testar raiz
                 double resultSqrt    = Math.sqrt(numberInterval);
 
-                if((Math.pow(resultSqrt,2) == new Integer(numberInterval).doubleValue()) && isCousin(numberInterval) ){
+                if((Math.pow(resultSqrt,2) == new Integer(numberInterval).doubleValue()) && Util.isPrime(new Double(resultSqrt).intValue()) ){
                     countNumberMagic++;
                     System.out.println("Número: "+numberInterval+" - Raiz:"+resultSqrt);
                 }
@@ -81,25 +79,5 @@ public class TestNumberMagic {
         return countNumberMagic;
     }
 
-    private static boolean isCousin(int numberTest) {
-        testCousin  = false;
-        countCousin = 0;
-
-        if( numberTest == 1 )
-            return testCousin;
-
-        IntStream.range(1, numberTest).forEach(numberCalc ->{
-
-            if (numberTest % numberCalc == 0)
-                countCousin++;
-        });
-
-        if( countCousin == 2 ) {
-            System.out.println("Primo:"+numberTest);
-            System.out.println("Contador:"+countCousin);
-            testCousin = true;
-        }
-        return testCousin;
-    }
 }
 
