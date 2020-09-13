@@ -3,24 +3,25 @@ package com.mn;
 import java.util.stream.IntStream;
 
 public class Util {
-    static boolean testCousin   = true;
+
+    static boolean isPrime;
 
     public static boolean isPrime(int numberTest) {
-        testCousin  = true;
+        isPrime = true;
 
         if( numberTest == 1 )
             return true;
 
-        int maxNumberTest   = new Double(Math.ceil(Math.sqrt(numberTest))).intValue();
+        int maxNumberTest   = new Double(Math.ceil(Math.sqrt(numberTest))).intValue()+1;
         IntStream.range(2, maxNumberTest).forEach(numberCalc ->{
 
             if (numberTest % numberCalc == 0) {
-                testCousin  = false;
+                isPrime = false;
                 return;
             }
         });
 
-        return testCousin;
+        return isPrime;
     }
 
 }

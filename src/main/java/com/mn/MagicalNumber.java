@@ -3,7 +3,6 @@ package com.mn;
 import java.util.stream.IntStream;
 
 public class MagicalNumber {
-    static double   resultFirstSqrt     = 0;
 
     public static int isMagicalNumber(int periodInitial, int periodFinal ){
 
@@ -13,18 +12,18 @@ public class MagicalNumber {
             throw new IllegalArgumentException("Período: ["+periodInitial+','+periodFinal+"] encontra-se com inconformidade com a regra B < A ");
         }
 
-        int      countNumberMagic    = 0;
+        int countNumberMagic       = 0;
+        int resultFirstSqrt;
 
         // Encontrar a primeira raiz quadrada
         resultFirstSqrt = new Double(Math.ceil(Math.sqrt(periodInitial))).intValue();
 
-        for (int numberInterval = (int) (resultFirstSqrt*resultFirstSqrt); (resultFirstSqrt*resultFirstSqrt) < periodFinal; numberInterval++) {
-            if( Util.isPrime((int) Math.sqrt(numberInterval)) ){
+        while ((resultFirstSqrt*resultFirstSqrt) <= periodFinal) {
+            if( Util.isPrime(resultFirstSqrt) ){
                 countNumberMagic++;
             }
-
+            System.out.println(resultFirstSqrt);
             resultFirstSqrt++;
-            numberInterval  = (int) (resultFirstSqrt*resultFirstSqrt)-1;
         }
 
         return countNumberMagic;
