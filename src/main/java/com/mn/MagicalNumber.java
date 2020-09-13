@@ -22,7 +22,6 @@ public class MagicalNumber {
             if( Util.isPrime(resultFirstSqrt) ){
                 countNumberMagic++;
             }
-            System.out.println(resultFirstSqrt);
             resultFirstSqrt++;
         }
 
