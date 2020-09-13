@@ -6,7 +6,7 @@ Este algoritmo calcula a quantidade de números mágicos em N intervalos de núm
  
 * Exemplo: [[8,27], [49,49]]
 
-###Restrições
+### Restrições
 * Não aceita mais de 2 elementos em cada intervalo
 * Não aceita letras
 * Não aceita números negativos
