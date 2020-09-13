@@ -18,8 +18,16 @@ Este algoritmo calcula a quantidade de números mágicos em N intervalos de núm
 * Está sendo considerado o número 1 como primo
 * Seria melhor para a performece trocar os loops de Java 8 por "for"
 
-## Execução de modo manual
-
+## Build manual com Testes
 ```bash
+mvn clean install -Dmaven.test.skip=false
+cd target/classes/
+java com.mn.Main [[8,27],[49,49]]
+```
+
+## Build manual sem Testes
+```bash
+mvn clean install -Dmaven.test.skip=true
+cd target/classes/
 java com.mn.Main [[8,27],[49,49]]
 ```
