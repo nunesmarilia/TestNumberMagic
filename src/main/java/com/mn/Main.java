@@ -50,13 +50,17 @@ public class Main {
 
         countNumberMagic    = 0;
 
-        listPeriods.forEach(period->{
-            String[] arrayPeriod    = period.split(",");
-            int periodInitial       = Integer.parseInt(arrayPeriod[0]);
-            int periodFinal         = Integer.parseInt(arrayPeriod[1]);
+        try {
+            listPeriods.forEach(period -> {
+                String[] arrayPeriod = period.split(",");
+                int periodInitial = Integer.parseInt(arrayPeriod[0]);
+                int periodFinal = Integer.parseInt(arrayPeriod[1]);
 
-            countNumberMagic    += MagicalNumber.isMagicalNumber(periodInitial, periodFinal);
-        });
+                countNumberMagic += MagicalNumber.isMagicalNumber(periodInitial, periodFinal);
+            });
+        }catch (NumberFormatException numberException){
+            throw new NumberFormatException("O paramêtro contêm um número maior que o suportado no tipo inteiro");
+        }
 
         return countNumberMagic;
     }

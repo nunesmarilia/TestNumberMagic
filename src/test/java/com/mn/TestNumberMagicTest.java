@@ -109,4 +109,13 @@ class TestNumberMagicTest {
         int resultNumberMagic   = Main.validNumberMagic(param);
         Assertions.assertEquals(485, resultNumberMagic);
     }
+
+    @Test
+    @DisplayName("Teste sucesso parêmetro inválido: Tamanho inteiro - Entrada [[8,27],[49,6867587565877]]")
+    void testNumberMagicOverflowSuccess() {
+        String[] param  = new String[1];
+        param[0]        = "[[8,27],[49,6867587565877]]";
+
+        Assertions.assertThrows(NumberFormatException.class, () -> Main.validNumberMagic(param));
+    }
 }
