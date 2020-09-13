@@ -20,8 +20,6 @@ public class Util {
             }
         });
 
-        System.out.println("Primo:"+numberTest);
-
         return testCousin;
     }
 

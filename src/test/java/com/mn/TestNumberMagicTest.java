@@ -11,7 +11,7 @@ class TestNumberMagicTest {
         String[] param  = new String[1];
         param[0]        = "[[8,27],[49,49]]";
 
-        int resultNumberMagic   = TestNumberMagic.validNumberMagic(param);
+        int resultNumberMagic   = Main.validNumberMagic(param);
         Assertions.assertEquals(3, resultNumberMagic);
     }
 
@@ -21,7 +21,7 @@ class TestNumberMagicTest {
         String[] param  = new String[1];
         param[0]        = "[[-8,27],[49,49]]";
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> TestNumberMagic.validNumberMagic(param));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Main.validNumberMagic(param));
     }
 
     @Test
@@ -30,7 +30,7 @@ class TestNumberMagicTest {
         String[] param  = new String[1];
         param[0]        = "[[30,27]]";
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> TestNumberMagic.validNumberMagic(param));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Main.validNumberMagic(param));
     }
 
     @Test
@@ -39,7 +39,7 @@ class TestNumberMagicTest {
         String[] param  = new String[1];
         param[0]        = "[[30.5,27]]";
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> TestNumberMagic.validNumberMagic(param));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Main.validNumberMagic(param));
     }
 
     @Test
@@ -48,7 +48,7 @@ class TestNumberMagicTest {
         String[] param  = new String[1];
         param[0]        = "[[B,A]]";
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> TestNumberMagic.validNumberMagic(param));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Main.validNumberMagic(param));
     }
 
     @Test
@@ -57,7 +57,7 @@ class TestNumberMagicTest {
         String[] param  = new String[1];
         param[0]        = "[[ 30,27 ]]";
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> TestNumberMagic.validNumberMagic(param));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Main.validNumberMagic(param));
     }
 
     @Test
@@ -66,6 +66,6 @@ class TestNumberMagicTest {
         String[] param  = new String[1];
         param[0]        = "";
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> TestNumberMagic.validNumberMagic(param));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Main.validNumberMagic(param));
     }
 }
